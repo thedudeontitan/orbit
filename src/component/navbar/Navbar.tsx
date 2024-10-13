@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Community, NavItem } from "../types";
 import { MdOutlineHome, MdSettings } from "react-icons/md";
 import { MdOutlinePieChart } from "react-icons/md";

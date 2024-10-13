@@ -1,6 +1,7 @@
 import React from "react";
 import { Market } from "./types";
 import { ConvertToDate } from "../utils/ConvertToDate";
+import Image from "next/image";
 
 export const Bet: React.FC<Market> = ({
   banner,
@@ -12,11 +13,9 @@ export const Bet: React.FC<Market> = ({
   return (
     <div className="rounded-lg flex flex-col gap-2 bg-[#ffffff12] text-[#D1D5DB] p-4 w-full">
       <div className="flex flex-row gap-2">
-        <img
-          src={banner}
-          alt=""
-          className="w-[6rem] object-contain rounded-lg"
-        />
+        <div className="relative w-[6rem] h-[4rem]">
+          <Image src={banner} alt="" className="object-cover rounded-lg" fill />
+        </div>
         <div className="flex flex-col gap-1">
           <h1 className="text-sm font-semibold">{title}</h1>
           <p className="text-xs">{description}</p>

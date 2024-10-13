@@ -1,14 +1,22 @@
 import React from "react";
 import { PostItem } from "./types";
+import Image from "next/image";
 
 export const Post: React.FC<PostItem> = ({ community, image, title }) => {
   return (
-    <div className="p-4 flex flex-col gap-4 bg-[#ffffff12] rounded-lg">
-      <div>
+    <div className="p-4 flex flex-col gap-4 bg-[#ffffff12] rounded-lg flex-grow w-full">
+      <div className="">
         <h1 className="text-xl font-bold">{title}</h1>
         <p>{community}</p>
       </div>
-      <img src={image} alt="" className="w-full object-contain rounded-lg" />
+      <div className="relative lg:w-[62rem] h-[80vh] ">
+        <Image
+          src={image}
+          alt="image"
+          fill
+          className="object-cover rounded-lg"
+        />
+      </div>
     </div>
   );
 };
