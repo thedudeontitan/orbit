@@ -23,3 +23,9 @@ interface Outcome {
   image?: string;
   odds?: number;
 }
+
+export interface PostItem {
+  community: string;
+  title: string;
+  image: string;
+}
