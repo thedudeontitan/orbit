@@ -27,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white p-2`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white p-2 min-h-screen`}
       >
-        <Navbar>{children}</Navbar>
+        <Navbar />
+        <main className="lg:ml-[14rem] pl-2">{children}</main>
       </body>
     </html>
   );
