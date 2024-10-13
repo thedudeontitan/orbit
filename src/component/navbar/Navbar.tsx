@@ -26,7 +26,7 @@ export default function Navbar() {
     <div>
       <div>
         <div className="hidden lg:flex lg:flex-col gap-2 text-sm fixed top-2 bottom-2 left-2">
-          <div className="bg-[#ffffff12] text-[#D1D5DB] w-[14rem] rounded-lg">
+          <div className="bg-[#ffffff12] w-[14rem] rounded-lg">
             {navItems.map((item) => (
               <Link
                 href="/"
@@ -38,7 +38,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="bg-[#ffffff12] text-[#D1D5DB] w-[14rem] rounded-lg flex-grow justify-between flex flex-col">
+          <div className="bg-[#ffffff12] w-[14rem] rounded-lg flex-grow justify-between flex flex-col">
             <div>
               <div className="pt-4 pl-4 text-xs font-bold">Communities</div>
               {navItems2.map((item) => (
@@ -66,8 +66,13 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+        <div className="lg:ml-[14rem] pl-2 fixed top-2 left-2 right-2 ">
+          <div className="bg-[#ffffff12] rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
+            <h1 className="text-xl font-bold">Orbit</h1>
+          </div>
+        </div>
       </div>
-      <div className=" fixed bottom-0 left-0 right-0 bg-[#ffffff12] text-[#D1D5DB]">
+      <div className=" fixed bottom-0 left-0 right-0 bg-[#ffffff12]">
         <div className="relative flex flex-row lg:hidden justify-around items-center">
           <Link href="/" className="p-5">
             <span className="text-xl">
