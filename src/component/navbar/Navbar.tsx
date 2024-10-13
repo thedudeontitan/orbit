@@ -66,7 +66,7 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="lg:ml-[14rem] pl-2 fixed top-2 left-2 right-2 ">
+        <div className="lg:ml-[14rem] lg:pl-2 fixed top-2 left-2 right-2 ">
           <div className="bg-[#ffffff12] rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
             <h1 className="text-xl font-bold">Orbit</h1>
           </div>

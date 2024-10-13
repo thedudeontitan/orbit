@@ -10,7 +10,7 @@ export const Bet: React.FC<Market> = ({
   description,
 }) => {
   return (
-    <div className="rounded-lg flex flex-col gap-2 bg-[#ffffff12] text-[#D1D5DB] p-2">
+    <div className="rounded-lg flex flex-col gap-2 bg-[#ffffff12] text-[#D1D5DB] p-4 w-full">
       <div className="flex flex-row gap-2">
         <img
           src={banner}
