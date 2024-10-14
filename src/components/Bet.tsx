@@ -6,7 +6,6 @@ import Image from "next/image";
 export const Bet: React.FC<Market> = ({
   banner,
   betEndTime,
-  outcomes,
   title,
   description,
 }) => {
