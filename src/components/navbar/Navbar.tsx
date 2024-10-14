@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <div>
       <div>
-        <div className="hidden lg:flex lg:flex-col gap-2 text-sm fixed top-2 bottom-2 left-2">
+        <div className="hidden lg:flex lg:flex-col gap-2 text-sm fixed top-2 bottom-2 left-2 z-10">
           <div className="bg-[#ffffff12] w-[14rem] rounded-lg">
             {navItems.map((item) => (
               <Link
@@ -66,24 +66,24 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="lg:ml-[14rem] lg:pl-2 fixed top-2 left-2 right-2 ">
-          <div className="bg-[#ffffff12] rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
-            <h1 className="text-xl font-bold">Orbit</h1>
+        <div className="lg:ml-[14rem] lg:pl-2 fixed top-2 left-2 right-2 z-10">
+          <div className="bg-[#000000] bg-opacity-60 lg:bg-[#ffffff12] lg:bg-opacity-100 rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
+            <h1 className="text-2xl lg:text-xl font-bold">Orbit</h1>
             <div className="flex gap-2 items-center flex-wrap">
               <WalletSelector />
             </div>
           </div>
         </div>
       </div>
-      <div className=" fixed bottom-0 left-0 right-0 bg-[#ffffff12]">
+      <div className=" fixed bottom-0 left-0 right-0 bg-[#000000] bg-opacity-60 backdrop-blur-2xl z-10 text-white">
         <div className="relative flex flex-row lg:hidden justify-around items-center">
-          <Link href="/" className="p-5">
-            <span className="text-xl">
+          <Link href="/" className="p-4">
+            <span className="text-3xl">
               <MdOutlineHome />
             </span>
           </Link>
-          <Link href="/" className="mr-6 p-5">
-            <span className="text-xl">
+          <Link href="/" className="mr-6 p-4">
+            <span className="text-3xl">
               <MdOutlinePieChart />
             </span>
           </Link>
@@ -91,17 +91,17 @@ export default function Navbar() {
             href="/"
             className="p-4 absolute -top-1/2 bg-blue-600 rounded-full"
           >
-            <span className="text-xl">
+            <span className="text-3xl">
               <MdAdd />
             </span>
           </Link>
-          <Link href="/" className="ml-6 p-5">
-            <span className="text-xl">
+          <Link href="/" className="ml-6 p-4">
+            <span className="text-3xl">
               <MdOutlineGroup />
             </span>
           </Link>
-          <Link href="/" className="p-5">
-            <span className="text-xl">
+          <Link href="/" className="p-4">
+            <span className="text-3xl">
               <MdOutlinePerson />
             </span>
           </Link>

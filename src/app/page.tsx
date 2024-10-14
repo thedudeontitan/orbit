@@ -14,7 +14,7 @@ const Communities: Community[] = [
 export default function Home() {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex flex-row gap-2 h-[20vh]">
+      <div className="hidden lg:flex lg:flex-row gap-2 h-[20vh]">
         {Array.from({ length: 3 }).map((_, index) => (
           <div
             key={index}
@@ -22,7 +22,7 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="flex flex-row gap-2 w-full">
+      <div className="lg:flex lg:flex-row lg:gap-2 w-full pt-16 lg:pt-0 overflow-clip">
         <div className="flex flex-col gap-2">
           <div className="lg:grid lg:grid-cols-2 flex flex-col gap-2 flex-grow">
             {Array.from({ length: 4 }).map((_, index) => (
@@ -39,7 +39,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="w-full">
+          <div className="w-full mb-20">
             <Post
               title="Title"
               community="Community"

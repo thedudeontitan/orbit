@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <WalletProvider>
           <Navbar />
-          <main className="lg:ml-[14rem] lg:mt-[3.5rem] pl-2 pt-2">
+          <main className="lg:ml-[14rem] lg:mt-[3.5rem] pl-2 pr-2 lg:pr-0 pt-2">
             {children}
           </main>
         </WalletProvider>
