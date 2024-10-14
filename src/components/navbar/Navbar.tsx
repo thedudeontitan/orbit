@@ -5,6 +5,7 @@ import { MdOutlineGroup } from "react-icons/md";
 import { MdOutlinePerson } from "react-icons/md";
 import Link from "next/link";
 import { MdAdd } from "react-icons/md";
+import { WalletSelector } from "../WalletSelector";
 
 const navItems: NavItem[] = [
   { title: "Home", icon: <MdOutlineHome /> },
@@ -68,6 +69,9 @@ export default function Navbar() {
         <div className="lg:ml-[14rem] lg:pl-2 fixed top-2 left-2 right-2 ">
           <div className="bg-[#ffffff12] rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
             <h1 className="text-xl font-bold">Orbit</h1>
+            <div className="flex gap-2 items-center flex-wrap">
+              <WalletSelector />
+            </div>
           </div>
         </div>
       </div>

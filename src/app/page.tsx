@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Bet } from "../component/Bet";
-import { Post } from "../component/Post";
-import { Community } from "../component/types";
+import { Bet } from "../components/Bet";
+import { Post } from "../components/Post";
+import { Community } from "../components/types";
 import Image from "next/image";
 
 const Communities: Community[] = [
