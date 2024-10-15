@@ -1,4 +1,4 @@
-import { Community, NavItem } from "../types";
+import { Community, NavItem } from "../../app/types";
 import { MdOutlineHome, MdSettings } from "react-icons/md";
 import { MdOutlinePieChart } from "react-icons/md";
 import { MdOutlineGroup } from "react-icons/md";
@@ -6,15 +6,16 @@ import { MdOutlinePerson } from "react-icons/md";
 import Link from "next/link";
 import { MdAdd } from "react-icons/md";
 import { WalletSelector } from "../WalletSelector";
+import { Button } from "../ui/button";
 
 const navItems: NavItem[] = [
-  { title: "Home", icon: <MdOutlineHome /> },
-  { title: "Market", icon: <MdOutlinePieChart /> },
-  { title: "Communities", icon: <MdOutlineGroup /> },
-  { title: "Profile", icon: <MdOutlinePerson /> },
+  { title: "Home", icon: <MdOutlineHome />, link: "/" },
+  { title: "Market", icon: <MdOutlinePieChart />, link: "/market" },
+  { title: "Communities", icon: <MdOutlineGroup />, link: "/communities" },
+  { title: "Profile", icon: <MdOutlinePerson />, link: "/profile" },
 ];
 
-const navItems2: Community[] = [
+export const navItems2: Community[] = [
   { title: "Politics", image: "/images/community1.png" },
   { title: "Football", image: "/images/community1.png" },
   { title: "Hollywood", image: "/images/community1.png" },
@@ -29,7 +30,7 @@ export default function Navbar() {
           <div className="bg-[#ffffff12] w-[14rem] rounded-lg">
             {navItems.map((item) => (
               <Link
-                href="/"
+                href={item.link}
                 key={item.title}
                 className="flex items-center justify-start h-14 px-4 hover:text-white transition"
               >
@@ -70,6 +71,12 @@ export default function Navbar() {
           <div className="bg-[#000000] bg-opacity-60 lg:bg-[#ffffff12] lg:bg-opacity-100 rounded-lg h-[3.5rem] flex flex-row items-center justify-between px-4 backdrop-blur-lg">
             <h1 className="text-2xl lg:text-xl font-bold">Orbit</h1>
             <div className="flex gap-2 items-center flex-wrap">
+              <Link href="/create" className="text-white">
+                <Button className="inline-flex gap-2 items-center">
+                  <MdAdd />
+                  Create
+                </Button>
+              </Link>
               <WalletSelector />
             </div>
           </div>
