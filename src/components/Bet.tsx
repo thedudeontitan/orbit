@@ -1,5 +1,5 @@
 import React from "react";
-import { Market } from "./types";
+import { Market } from "../app/types";
 import { ConvertToDate } from "../utils/ConvertToDate";
 import Image from "next/image";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { PostItem } from "./types";
+import { PostItem } from "../app/types";
 
 export const Post: React.FC<PostItem> = ({ community, image, title }) => {
   return (

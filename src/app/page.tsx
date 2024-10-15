@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Bet } from "../components/Bet";
 import { Post } from "../components/Post";
-import { Community } from "../components/types";
+import { Community } from "./types";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const Communities: Community[] = [
   { title: "Politics", image: "/images/community1.png" },
@@ -14,13 +15,18 @@ const Communities: Community[] = [
 export default function Home() {
   return (
     <div className="flex flex-col gap-2">
-      <div className="hidden lg:flex lg:flex-row gap-2 h-[20vh]">
-        {Array.from({ length: 3 }).map((_, index) => (
-          <div
-            key={index}
-            className="bg-[#ffffff12] text-[#D1D5DB] w-full rounded-lg"
-          />
-        ))}
+      <div className="hidden lg:flex lg:flex-row gap-2">
+        <div className="bg-[#ffffff12] text-[#D1D5DB] w-full rounded-lg p-4 flex flex-col gap-2">
+          <h1 className="text-xl font-bold">What's on your mind?</h1>
+
+          <div className="inline-flex justify-between items-center">
+            <p>Create New Post or Market with just a few clicks!</p>
+            <div className="ml-auto inline-flex gap-2">
+              <Button>Create New Market</Button>
+              <Button>Create New Post</Button>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="lg:flex lg:flex-row lg:gap-2 w-full pt-16 lg:pt-0 overflow-clip">
         <div className="flex flex-col gap-2">

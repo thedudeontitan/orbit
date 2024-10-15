@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-[#D1D5DB] p-2 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-[#D1D5DB]  min-h-screen`}
       >
         <WalletProvider>
           <Navbar />
-          <main className="lg:ml-[14rem] lg:mt-[3.5rem] pl-2 pr-2 lg:pr-0 pt-2">
+          <main className="lg:ml-[14rem] lg:mt-[3.5rem] pl-4 pr-2 lg:pr-0 pt-4">
             {children}
           </main>
         </WalletProvider>
