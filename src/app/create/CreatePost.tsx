@@ -4,13 +4,14 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CircleX } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 export const CreatePost = ({ community }: { community: string }) => {
   const [fileInfo, setFileInfo] = useState({ fileName: "", fileURL: "" });
   const [imageUploading, setImageUploading] = useState<boolean>(false);
   const [fileListKey, setFileListKey] = useState<number>(0);
+  const [url, setUrl] = useState<string>("");
 
   const form = useForm<PostItem>({
     defaultValues: {
@@ -21,7 +22,7 @@ export const CreatePost = ({ community }: { community: string }) => {
   });
   const { register, handleSubmit, resetField } = form;
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
 
     if (files && files.length > 0) {
@@ -34,10 +35,35 @@ export const CreatePost = ({ community }: { community: string }) => {
         const formData = new FormData();
 
         formData.append("file", file);
-        setImageUploading(true);
+
+        try {
+          if (!file) {
+            alert("No file selected");
+            return;
+          }
+
+          setImageUploading(true);
+          const data = new FormData();
+          data.set("file", file);
+          const uploadRequest = await fetch("/api/files", {
+            method: "POST",
+            body: data,
+          });
+          const ipfsUrl = await uploadRequest.json();
+          setUrl(ipfsUrl);
+          setImageUploading(false);
+        } catch (e) {
+          console.log(e);
+          setImageUploading(false);
+          alert("Trouble uploading file");
+        }
       }
     }
   };
+
+  useEffect(() => {
+    console.log(url);
+  });
 
   const handleResetImage = () => {
     setFileListKey((prev) => prev + 1);

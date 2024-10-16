@@ -16,6 +16,7 @@ export const CreateMarket = ({ community }: { community: string }) => {
   const [imageUploading, setImageUploading] = useState<boolean>(false);
   const [fileListKey, setFileListKey] = useState<number>(0);
   const [date, setDate] = useState<Date>();
+  const [url, setUrl] = useState<string>("");
 
   const form = useForm<Market>({
     defaultValues: {
@@ -28,7 +29,7 @@ export const CreateMarket = ({ community }: { community: string }) => {
   });
   const { register, handleSubmit, resetField } = form;
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
 
     if (files && files.length > 0) {
@@ -41,7 +42,27 @@ export const CreateMarket = ({ community }: { community: string }) => {
         const formData = new FormData();
 
         formData.append("file", file);
-        setImageUploading(true);
+        try {
+          if (!file) {
+            alert("No file selected");
+            return;
+          }
+
+          setImageUploading(true);
+          const data = new FormData();
+          data.set("file", file);
+          const uploadRequest = await fetch("/api/files", {
+            method: "POST",
+            body: data,
+          });
+          const ipfsUrl = await uploadRequest.json();
+          setUrl(ipfsUrl);
+          setImageUploading(false);
+        } catch (e) {
+          console.log(e);
+          setImageUploading(false);
+          alert("Trouble uploading file");
+        }
       }
     }
   };

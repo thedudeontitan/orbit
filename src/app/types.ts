@@ -22,7 +22,6 @@ export interface Market {
 interface Outcome {
   id: string;
   title: string;
-  image?: string;
   odds?: number;
 }
 
